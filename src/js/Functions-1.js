@@ -1,0 +1,23 @@
+"use strict";
+// A interface de uma função é definida durante a sua declaração.
+//O c é um parâmetro opcional
+//Somar
+function somar(a, b, c) {
+    return a + b + (c ? c : 0);
+}
+console.log(somar(10, 20));
+console.log(somar(10, 20, 20));
+//Subtrair
+const subtrair = (a, b, c) => a - b - (c ? c : 0);
+console.log(subtrair(5, 2));
+console.log(subtrair(10, 5, 2));
+function normalizar(value) {
+    if (typeof value === "string") {
+        return value.trim().toLowerCase();
+    }
+    else {
+        return value.map((item) => item.trim().toLowerCase());
+    }
+}
+console.log(normalizar(" LUcas "));
+console.log(normalizar([" LUcas ", "JAMES", "rOBErt "]));
