@@ -13,11 +13,12 @@ const carro: {
 };
 
 const barato = preco < 200 ? true : "produto caro";
+console.log(barato);
 
 function somar(a: number, b: number) {
   return a + b;
 }
-somar(4, 8);
+console.log(somar(4, 8));
 
 const nintendo = {
   nome: "Nintendo",
@@ -37,7 +38,7 @@ console.log(produtoNovo);
 function normalizarTexto(texto: string) {
   return texto.trim().toLowerCase();
 }
-console.log(normalizarTexto("Lucas"));
+console.log(normalizarTexto("Lucas "));
 
 //EXERCÍCIO - 2-------------------------------------------------------------
 //Conserte a função com TypeScript

@@ -1,3 +1,6 @@
+//----------------------------------------------------------------
+//Types
+
 type Produto = {
   nome: string;
   preco: number;
@@ -37,3 +40,49 @@ function buscarCategorias(categoria: Categorias) {
   }
 }
 const fullName: string = "Lucas";
+
+//----------------------------------------------------------------
+//Interfaces
+interface InterfaceProduto {
+  nome: string;
+  preco: number;
+  teclado: boolean;
+}
+
+//----------------------------------------------------------------
+//Exercício
+
+async function fetchProduct() {
+  const response = await fetch("https://api.origamid.dev/json/notebook.json");
+  const data = await response.json();
+  showProduct(data);
+}
+
+fetchProduct();
+interface Empresa {
+  fundacao: number;
+  nome: string;
+  pais: string;
+}
+interface Poduct {
+  nome: string;
+  preco: number;
+  descricao: string;
+  garantia: string;
+  seguroAcidentes: boolean;
+  empresaFabricante: Empresa;
+  empresaMontadora: Empresa;
+}
+
+function showProduct(data: Poduct) {
+  document.body.innerHTML = `
+    <div>
+      <h2>${data.nome}</h2>
+      <p>${data.preco}</p>
+      <p>${data.descricao}</p>
+      <p>${data.garantia}</p>
+      <p>${data.seguroAcidentes}</p>
+
+    </div>
+  `;
+}

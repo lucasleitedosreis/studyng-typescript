@@ -1,4 +1,6 @@
 "use strict";
+//----------------------------------------------------------------
+//Types
 function preencherDados(dados) {
     document.body.innerHTML += `
   <div>
@@ -28,3 +30,23 @@ function buscarCategorias(categoria) {
     }
 }
 const fullName = "Lucas";
+//----------------------------------------------------------------
+//Exercício
+async function fetchProduct() {
+    const response = await fetch("https://api.origamid.dev/json/notebook.json");
+    const data = await response.json();
+    showProduct(data);
+}
+fetchProduct();
+function showProduct(data) {
+    document.body.innerHTML = `
+    <div>
+      <h2>${data.nome}</h2>
+      <p>${data.preco}</p>
+      <p>${data.descricao}</p>
+      <p>${data.garantia}</p>
+      <p>${data.seguroAcidentes}</p>
+
+    </div>
+  `;
+}

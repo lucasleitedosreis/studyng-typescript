@@ -8,10 +8,11 @@ const carro = {
     portas: 4,
 };
 const barato = preco < 200 ? true : "produto caro";
+console.log(barato);
 function somar(a, b) {
     return a + b;
 }
-somar(4, 8);
+console.log(somar(4, 8));
 const nintendo = {
     nome: "Nintendo",
     preco: "2000",
@@ -27,7 +28,7 @@ console.log(produtoNovo);
 function normalizarTexto(texto) {
     return texto.trim().toLowerCase();
 }
-console.log(normalizarTexto("Lucas"));
+console.log(normalizarTexto("Lucas "));
 //EXERCÍCIO - 2-------------------------------------------------------------
 //Conserte a função com TypeScript
 const input = document.querySelector("input");
