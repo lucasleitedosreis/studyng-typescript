@@ -62,3 +62,24 @@ if (link2) {
   console.log(extractText(link2).el);
   console.log(extractText(link2));
 }
+
+//----------------------------------------------------------------
+// Define que o retorno será um HTMLAnchorElement
+const link3 = document.querySelector<HTMLAnchorElement>(".link");
+
+async function getData<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  return await response.json();
+}
+
+interface Notebook {
+  nome: string;
+  preco: number;
+}
+
+async function handleData() {
+  const notebook = await getData<Notebook>(
+    "https://api.origamid.dev/json/notebook.json"
+  );
+  console.log(notebook.nome);
+}

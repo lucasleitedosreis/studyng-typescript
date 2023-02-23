@@ -65,8 +65,8 @@ if (produto2 instanceof Livro) {
 // 2 - Substitua o href do link (HTMLAnchorElement) de http:// para https://.
 
 const link = document.getElementById("origamid");
-console.dir(link);
+console.dir(link3);
 
-if (link instanceof HTMLAnchorElement) {
-  link.href = link.href.replace("http://", "https://");
+if (link3 instanceof HTMLAnchorElement) {
+  link3.href = link3.href.replace("http://", "https://");
 }
