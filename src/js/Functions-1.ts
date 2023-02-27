@@ -1,11 +1,11 @@
 // A interface de uma função é definida durante a sua declaração.
 //O c é um parâmetro opcional
 //Somar
-function sum3(a: number, b: number, c?: number): number {
+function somar(a: number, b: number, c?: number): number {
   return a + b + (c ? c : 0);
 }
-console.log(sum3(10, 20));
-console.log(sum3(10, 20, 20));
+console.log(somar(10, 20));
+console.log(somar(10, 20, 20));
 
 //Subtrair
 const subtrair = (a: number, b: number, c?: number) => a - b - (c ? c : 0);
