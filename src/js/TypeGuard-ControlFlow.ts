@@ -3,7 +3,7 @@
 
 // O TypeScript faz Control Flow (controle de fluxo) para entender qual o dado dentro da condicional.
 
-function typeGuard(value: any) {
+function typeGuards(value: any) {
   if (typeof value === "string") {
     return value.toLowerCase();
   }
@@ -36,7 +36,7 @@ interface Produtos {
   preco: number;
 }
 
-async function fetchProduto() {
+async function fetchProdutos() {
   const response = await fetch("https://api.origamid.dev/json/notebook.json");
   const json = await response.json();
   handleProduto(json);

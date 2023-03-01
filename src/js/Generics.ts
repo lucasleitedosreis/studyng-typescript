@@ -77,7 +77,7 @@ interface Notebook {
   preco: number;
 }
 
-async function handleData() {
+async function handleDatas() {
   const notebook = await getData<Notebook>(
     "https://api.origamid.dev/json/notebook.json"
   );
