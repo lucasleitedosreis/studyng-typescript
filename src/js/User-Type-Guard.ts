@@ -10,10 +10,10 @@ fetchCursosOnline();
 
 function handleCursos(data: unknown) {
   if (data instanceof Array) {
-    console.log("Verificação con instanceof: É uma instância de Array");
+    // console.log("Verificação con instanceof: É uma instância de Array");
   }
   if (Array.isArray(data)) {
-    console.log("Verificação con isArray: É uma instância de Array");
+    // console.log("Verificação con isArray: É uma instância de Array");
   }
 }
 
@@ -68,5 +68,53 @@ function isProduto(value: unknown): value is Produtos {
 }
 
 function handleProdutos(data: unknown) {
-  console.log(data);
+  // console.log(data);
+}
+
+//----------------------------------------------------------------
+// 1 - Faça um fetch da API: https://api.origamid.dev/json/cursos.json
+// 2 - Defina a interface da API
+// 3 - Crie um Type Guard, que garanta que a API possui nome, horas e tags
+// 4 - Use Type Guards para garantir a Type Safety do código
+// 5 - Preencha os dados da API na tela.
+
+async function cursosFetch() {
+  const response = await fetch("https://api.origamid.dev/json/cursos.json");
+  const json = await response.json();
+  showCursos(json);
+}
+cursosFetch();
+
+interface Cursos {
+  nome: string;
+  horas: number;
+  tags: string[];
+}
+
+function isCursos(data: unknown): data is Cursos {
+  if (
+    data &&
+    typeof data === "object" &&
+    "nome" in data &&
+    "horas" in data &&
+    "tags" in data
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function showCursos(data: unknown) {
+  if (data instanceof Array) {
+    data.filter(isCursos).forEach((item) => {
+      document.body.innerHTML += `
+      <div>
+      <h2>${item.nome}</h2>
+      <p>${item.horas}</p>
+      <p>${item.tags.join(", ")}</p>
+      </div>
+      `;
+    });
+  }
 }

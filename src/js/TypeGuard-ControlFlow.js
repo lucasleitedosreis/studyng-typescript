@@ -2,7 +2,7 @@
 // Guard, Safety e Narrowing
 // O Type Guard (defesa) garante a Type Safety (segurança) do dado dentro do bloco condicional. Esse processo é chamado de Type Narrowing (estreitamento).
 // O TypeScript faz Control Flow (controle de fluxo) para entender qual o dado dentro da condicional.
-function typeGuard(value) {
+function typeGuards(value) {
     if (typeof value === "string") {
         return value.toLowerCase();
     }
@@ -25,7 +25,7 @@ const obj = {
 if ("nome" in obj) {
     console.log("Sim");
 }
-async function fetchProduto() {
+async function fetchProdutos() {
     const response = await fetch("https://api.origamid.dev/json/notebook.json");
     const json = await response.json();
     handleProduto(json);
