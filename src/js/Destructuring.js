@@ -3,11 +3,11 @@
 // Durante a desestruturação de objetos, podemos indicar o tipo de dado com a
 // sintaxe: { key1, key2 }: { key1: type1; key2: type2; }
 const { body } = document;
-function handleProduto({ nome, preco }) {
+function handleProduto4({ nome, preco }) {
     nome.includes("livro");
     preco.toFixed();
 }
-handleProduto({
+handleProduto4({
     nome: "livro",
     preco: 68,
 });
