@@ -33,7 +33,6 @@ class Product {
 
   constructor(name: string, preco: number) {
     this.name = name;
-    this.type;
     this.preco = preco;
   }
 
