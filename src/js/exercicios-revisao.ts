@@ -45,7 +45,7 @@ function loadLocalStorage() {
         const input = document.getElementById(key);
         if (input instanceof HTMLInputElement) {
           input.value = value;
-          window.UserData = value;
+          window.UserData[key] = value;
         }
       });
     }
