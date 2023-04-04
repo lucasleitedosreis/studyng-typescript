@@ -19,5 +19,5 @@ function getText(selector) {
 }
 const button = getText("button");
 if (button) {
-    const [buttonElement, buttonText] = button;
+    //   const [buttonElement, buttonText] = button;
 }
