@@ -6,14 +6,14 @@
 // Podemos definir propriedades opcionais utilizando opcional?: string. Quando opcional,
 // elas poderão sempre retornar como o valor definido ou undefined.
 
-interface Product {
+interface Products {
   nome?: string;
 }
 
-const livro: Product = {};
-const jogo: Product = {
+const livros: Products = {};
+const jogos: Products = {
   nome: "Ragnarok",
 };
 
-jogo.nome?.toLowerCase();
-livro.nome?.toLowerCase();
+jogos.nome?.toLowerCase();
+livros.nome?.toLowerCase();

@@ -25,8 +25,9 @@ function somarVendas(vendas: Venda[]) {
     total1 += value[1];
   }
   console.log(total1);
+
   //----------------------------------------------------------------
-  //Soma s
+  //Soma 2
   const total2 = vendas.reduce((total, venda) => {
     return total + venda[1];
   }, 0);
